@@ -28,6 +28,9 @@ canvas {
   position: relative;
   max-width: 1120px;
 }
+.input-black {
+  color: black;
+}
 
 @layer utilities {
   .flex-center {
