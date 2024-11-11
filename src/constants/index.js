@@ -10,7 +10,7 @@ import {
 } from "../utils";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
-
+export const altNavLists = ["Overview", "Tech Specs"];
 export const hightlightsSlides = [
   {
     id: 1,

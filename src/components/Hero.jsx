@@ -57,7 +57,7 @@ function Hero() {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20"
       >
-        <Link to={"/login"} href="#highlights" className="btn">
+        <Link to={"/cart"} href="#highlights" className="btn">
           Buy
         </Link>
         <p className="font-normal text-xl">From $199/month or $999</p>

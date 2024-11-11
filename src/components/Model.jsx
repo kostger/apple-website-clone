@@ -1,14 +1,17 @@
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ModelView from "./ModelView";
-import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils";
-
+import axios from "axios";
+import { AuthContext } from "../context/auth.context"; // Adjust the path as necessary
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
 import { animateWithGsapTimeline } from "../utils/animations";
+import AddIcon from "@mui/icons-material/Add";
+import CheckIcon from "@mui/icons-material/Check";
 
 const Model = () => {
   const [size, setSize] = useState("small");
@@ -17,6 +20,10 @@ const Model = () => {
     color: ["#8F8A81", "#FFE7B9", "#6F6C64"],
     img: yellowImg,
   });
+  const [isAdded, setIsAdded] = useState(false);
+
+  const { token } = useContext(AuthContext); // Get the token from the context
+  const API_URL = import.meta.env.VITE_API_URL;
 
   // camera control for the model view
   const cameraControlSmall = useRef();
@@ -51,6 +58,50 @@ const Model = () => {
   useGSAP(() => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
+
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    if (isAdded) {
+      gsap.to(buttonRef.current, {
+        backgroundColor: "#22c55e", // green
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    } else {
+      gsap.to(buttonRef.current, {
+        backgroundColor: "#3b82f6", // blue
+        duration: 0.5,
+        ease: "power2.in",
+      });
+    }
+  }, [isAdded]);
+
+  const handleAddToCart = () => {
+    const cartItem = {
+      type: model.title,
+      color: model.color[0],
+      image: model.img,
+      size: size,
+      quantity: 1, // Assuming a default quantity of 1
+      price: size === "small" ? 999 : 1199,
+    };
+    console.log(JSON.stringify(cartItem));
+    axios
+      .post(`${API_URL}/api/cart/add`, cartItem, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log("Item added to cart:", response.data);
+        setIsAdded(true);
+        setTimeout(() => setIsAdded(false), 2000); // Reset after 2 seconds
+      })
+      .catch((error) => {
+        console.error("There was an error adding the item to the cart!", error);
+      });
+  };
 
   return (
     <section className="common-padding">
@@ -126,6 +177,17 @@ const Model = () => {
                     {label}
                   </span>
                 ))}
+              </button>
+
+              <button
+                ref={buttonRef}
+                className={`btn mt-5 ${
+                  isAdded ? "bg-green-500" : "bg-blue-500"
+                }`}
+                onClick={handleAddToCart}
+              >
+                {isAdded ? <CheckIcon /> : <AddIcon />}
+                {isAdded ? "Added" : "Add to Cart"}
               </button>
             </div>
           </div>
