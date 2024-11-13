@@ -5,9 +5,10 @@ import CartScreen from "./pages/CartScreen";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import IsPrivate from "./components/IsPrivate";
+import IpadScreen from "./pages/IpadScreen";
 const App = () => {
   return (
-    <main className="bg-black">
+    <main>
       <div style={{ zIndex: 11 }}>
         <Navbar />
       </div>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
+        <Route path="/ipad" element={<IpadScreen />} />
         <Route
           path="/cart"
           element={

@@ -151,7 +151,7 @@ const Model = () => {
           <div className="mx-auto w-full">
             <p className="text-sm font-light text-center mb-5">{model.title}</p>
 
-            <div className="flex-center">
+            <div className="flex-center gap-2">
               <ul className="color-container">
                 {models.map((item, i) => (
                   <li
@@ -181,13 +181,15 @@ const Model = () => {
 
               <button
                 ref={buttonRef}
-                className={`btn mt-5 ${
+                className={`btn flex-center mt-5  ${
                   isAdded ? "bg-green-500" : "bg-blue-500"
                 }`}
                 onClick={handleAddToCart}
               >
                 {isAdded ? <CheckIcon /> : <AddIcon />}
-                {isAdded ? "Added" : "Add to Cart"}
+                <span className="max-sm:hidden">
+                  {isAdded ? "Added" : "Add to Cart"}
+                </span>
               </button>
             </div>
           </div>

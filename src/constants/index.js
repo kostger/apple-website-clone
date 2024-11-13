@@ -1,15 +1,25 @@
 import {
   blackImg,
   blueImg,
+  carousel1Img,
+  carousel2Img,
+  carousel3Img,
+  carousel4Img,
+  carousel5Img,
+  carousel6Img,
   highlightFirstVideo,
   highlightFourthVideo,
   highlightSecondVideo,
   highlightThirdVideo,
+  ipadAirImg,
+  ipadImg,
+  ipadMiniImg,
+  ipadProImg,
   whiteImg,
   yellowImg,
 } from "../utils";
 
-export const navLists = ["Store", "Mac", "iPhone", "Support"];
+export const navLists = ["Store", "iPad", "iPhone", "Support"];
 export const altNavLists = ["Overview", "Tech Specs"];
 export const hightlightsSlides = [
   {
@@ -84,4 +94,60 @@ export const footerLinks = [
   "Sales Policy",
   "Legal",
   "Site Map",
+];
+
+export const imageCarousel = [
+  {
+    title: "Productivity",
+    desc: "Your workplace can be any plance.",
+    img: carousel1Img,
+  },
+  {
+    title: "Creativity",
+    desc: "Take your inner artist out and about.",
+    img: carousel2Img,
+  },
+  {
+    title: "Learning",
+    desc: "Your classroom can be anywhere.",
+    img: carousel3Img,
+  },
+  {
+    title: "Entertainment",
+    desc: "Kick bac. Tune in. Game on.",
+    img: carousel4Img,
+  },
+  {
+    title: "Apple Pencil",
+    desc: "Dream it up. Jot it down.",
+    img: carousel5Img,
+  },
+  {
+    title: "iPadOS + Apps",
+    desc: "Everyday superpowers. Built right in.",
+    img: carousel6Img,
+  },
+];
+
+export const ipadLineup = [
+  {
+    title: "iPad Pro",
+    desc: "The ultimate iPad experience with our most advanced technology.",
+    img: ipadProImg,
+  },
+  {
+    title: "iPad Air",
+    desc: "Serious performance in a thin and light design.",
+    img: ipadAirImg,
+  },
+  {
+    title: "iPad",
+    desc: "The colorful, all‑screen iPad for the things you do every day.",
+    img: ipadImg,
+  },
+  {
+    title: "iPad mini",
+    desc: "The full iPad experience in an ultraportable design.",
+    img: ipadMiniImg,
+  },
 ];

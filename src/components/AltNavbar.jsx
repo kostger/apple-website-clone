@@ -21,11 +21,11 @@ function AltNavbar() {
           <div className="text-xl font-bold">iPhone 15 Pro</div>
         </Link>
 
-        <div className="flex items-center gap-4 max-sm:hidden">
+        <div className="flex items-center gap-4 ">
           {altNavLists.map((nav, index) => (
             <div
               key={index}
-              className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all"
+              className="px-5 max-sm:hidden text-sm cursor-pointer text-gray hover:text-white transition-all"
             >
               {nav}
             </div>

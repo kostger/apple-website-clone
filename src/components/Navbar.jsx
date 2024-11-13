@@ -14,14 +14,24 @@ function Navbar() {
         </Link>
 
         <div className="flex flex-1 justify-center max-sm:hidden ">
-          {navLists.map((nav, index) => (
-            <div
-              key={index}
-              className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all "
-            >
-              {nav}
-            </div>
-          ))}
+          <Link className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all ">
+            Store
+          </Link>
+          <Link
+            to={"/ipad"}
+            className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all "
+          >
+            iPad
+          </Link>
+          <Link
+            to={"/"}
+            className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all "
+          >
+            iPhone
+          </Link>
+          <Link className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all ">
+            Support
+          </Link>
         </div>
         <div className="flex items-baseline gap-7 max-sm:justify-end max-sm:flex-1">
           <img src={searchImg} alt="search" w={18} h={18} />

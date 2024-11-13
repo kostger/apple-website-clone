@@ -29,6 +29,29 @@ import explore2 from "/assets/images/explore2.jpg";
 import chip from "/assets/images/chip.jpeg";
 import frame from "/assets/images/frame.png";
 
+import carousel1 from "/assets/images/ipad/carousel1.jpg";
+import carousel2 from "/assets/images/ipad/carousel2.jpg";
+import carousel3 from "/assets/images/ipad/carousel3.jpg";
+import carousel4 from "/assets/images/ipad/carousel4.jpg";
+import carousel5 from "/assets/images/ipad/carousel5.jpg";
+import carousel6 from "/assets/images/ipad/carousel6.jpg";
+
+import ipad_pro from "/assets/images/ipad/ipad-pro.png";
+import ipad_air from "/assets/images/ipad/ipad-air.png";
+import ipad from "/assets/images/ipad/ipad.png";
+import ipad_mini from "/assets/images/ipad/ipad-mini.png";
+
+export const ipadProImg = ipad_pro;
+export const ipadAirImg = ipad_air;
+export const ipadImg = ipad;
+export const ipadMiniImg = ipad_mini;
+export const carousel1Img = carousel1;
+export const carousel2Img = carousel2;
+export const carousel3Img = carousel3;
+export const carousel4Img = carousel4;
+export const carousel5Img = carousel5;
+export const carousel6Img = carousel6;
+
 export const heroVideo = hmv;
 export const smallHeroVideo = smallmv;
 export const highlightFirstVideo = highlightFirstmv;
