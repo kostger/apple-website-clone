@@ -25,8 +25,6 @@ function LoginScreen() {
     axios
       .post(`${API_URL}/api/login`, requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
-
         storeToken(response.data.authToken);
         authenticateUser();
         navigate("/");

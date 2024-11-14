@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ModelView from "./ModelView";
 import { yellowImg } from "../utils";
 import axios from "axios";
-import { AuthContext } from "../context/auth.context"; // Adjust the path as necessary
+import { AuthContext } from "../context/auth.context";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
@@ -12,6 +12,8 @@ import { models, sizes } from "../constants";
 import { animateWithGsapTimeline } from "../utils/animations";
 import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
+import { toast, ToastContainer, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Model = () => {
   const [size, setSize] = useState("small");
@@ -22,7 +24,7 @@ const Model = () => {
   });
   const [isAdded, setIsAdded] = useState(false);
 
-  const { token } = useContext(AuthContext); // Get the token from the context
+  const { token, isLoggedIn } = useContext(AuthContext); // Get the token from the context
   const API_URL = import.meta.env.VITE_API_URL;
 
   // camera control for the model view
@@ -76,6 +78,23 @@ const Model = () => {
       });
     }
   }, [isAdded]);
+  const handleCheckLogin = () => {
+    if (!isLoggedIn) {
+      toast.error("Please log in to add items to your cart!", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    } else {
+      handleAddToCart();
+    }
+  };
 
   const handleAddToCart = () => {
     const cartItem = {
@@ -184,7 +203,7 @@ const Model = () => {
                 className={`btn flex-center mt-5  ${
                   isAdded ? "bg-green-500" : "bg-blue-500"
                 }`}
-                onClick={handleAddToCart}
+                onClick={handleCheckLogin}
               >
                 {isAdded ? <CheckIcon /> : <AddIcon />}
                 <span className="max-sm:hidden">

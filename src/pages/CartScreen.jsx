@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { AuthContext } from "../context/auth.context"; // Adjust the path as necessary
-import { useNavigate } from "react-router-dom"; // Assuming you are using react-router-dom for navigation
+import { AuthContext } from "../context/auth.context";
+import { useNavigate } from "react-router-dom";
 
 function CartScreen() {
   const [cartItems, setCartItems] = useState([]);
-  const { token } = useContext(AuthContext); // Get the token from the context
+  const { token } = useContext(AuthContext);
   const API_URL = import.meta.env.VITE_API_URL;
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch cart items from the API
     axios
       .get(`${API_URL}/api/cart`, {
         headers: {
@@ -91,7 +90,11 @@ function CartScreen() {
               </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={"../../public/assets/images/iphone15.png"}
+                  src={
+                    item.type.includes("iPhone")
+                      ? "../../public/assets/images/iphone15.png"
+                      : `../../public${item.image}`
+                  }
                   alt={item.type}
                   className="w-20 h-20 object-cover"
                 />

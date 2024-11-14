@@ -34,8 +34,14 @@ function HomeScreen() {
       >
         <AltNavbar />
       </div>
-      <Hero />
-      <Highlights />
+      <div id="overview">
+        <Hero />
+      </div>
+
+      <div id="specs">
+        <Highlights />
+      </div>
+
       <div id="configure">
         <Model />
       </div>

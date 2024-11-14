@@ -6,12 +6,15 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import IsPrivate from "./components/IsPrivate";
 import IpadScreen from "./pages/IpadScreen";
+import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
 const App = () => {
   return (
     <main>
       <div style={{ zIndex: 11 }}>
         <Navbar />
       </div>
+      <ToastContainer />
 
       <Routes>
         <Route path="/" element={<HomeScreen />} />
@@ -27,6 +30,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </main>
   );
 };
