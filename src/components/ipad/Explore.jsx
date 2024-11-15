@@ -11,11 +11,11 @@ import AddIcon from "@mui/icons-material/Add";
 import CheckIcon from "@mui/icons-material/Check";
 
 const Explore = () => {
-  const { token, isLoggedIn } = useContext(AuthContext); // Get the token from the context
+  const { isLoggedIn } = useContext(AuthContext); // Get the token from the context
   const API_URL = import.meta.env.VITE_API_URL;
   const buttonRefs = useRef([]);
   const [isAdded, setIsAdded] = useState(Array(ipadLineup.length).fill(false));
-
+  const token = localStorage.getItem("authToken");
   useEffect(() => {
     isAdded.forEach((added, index) => {
       if (added) {
@@ -148,6 +148,18 @@ const Explore = () => {
                 {isAdded[index] ? "Added" : "Add to Cart"}
               </span>
             </button>
+            <div className="mt-4 flex flex-col justify-center items-center gap-2 w-1/2">
+              <p className="text-lg font-semibold text-black">{item.size}</p>
+              <p className="text-gray-600 text-sm">{item.displayType}</p>
+              <p className="text-gray-400 text-sm">{item.colorSpec}</p>
+
+              {/* Conditionally Render Extra Description */}
+              {item.extraDesc && (
+                <p className="text-gray-400 text-xs mt-2 italic">
+                  {item.extraDesc}
+                </p>
+              )}
+            </div>
           </div>
         ))}
       </div>

@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 function CartScreen() {
   const [cartItems, setCartItems] = useState([]);
-  const { token } = useContext(AuthContext);
+
   const API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
+  const token = localStorage.getItem("authToken");
 
   useEffect(() => {
     axios
@@ -18,7 +19,6 @@ function CartScreen() {
       })
       .then((response) => {
         setCartItems(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error("There was an error fetching the cart items!", error);
@@ -66,9 +66,9 @@ function CartScreen() {
   );
 
   return (
-    <div className="w-screen overflow-hidden h-full common-padding bg-zinc flex justify-evenly">
-      <div className="border border-black bg-black rounded w-1/2 flex flex-col">
-        <div className="text-2xl font-semibold mb-4">Cart</div>
+    <div className="w-screen overflow-hidden h-full common-padding bg-zinc flex flex-col md:flex-row justify-evenly">
+      <div className="border border-black bg-black rounded w-full md:w-1/2 flex flex-col">
+        <div className="text-2xl font-semibold mb-4 p-6">Cart</div>
         <div className="flex flex-col">
           {cartItems.map((item, index) => (
             <div
@@ -88,7 +88,7 @@ function CartScreen() {
                 <div>Quantity: {item.quantity}</div>
                 <div>Price: ${item.price}</div>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center flex-col md:flex-row gap-4">
                 <img
                   src={
                     item.type.includes("iPhone")
@@ -100,29 +100,19 @@ function CartScreen() {
                 />
                 <div className="flex flex-col gap-2">
                   <button
-                    className="px-5 py-2 rounded-3xl bg-blue text-white hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue transition-all"
+                    className="px-5 py-2 rounded-3xl bg-red-500 text-white hover:bg-transparent border border-transparent hover:border  hover:border-white transition-all"
                     onClick={() => handleDelete(item._id)}
                   >
                     Remove
                   </button>
-                  {/* <button
-                    className="px-5 py-2 rounded-3xl bg-blue text-white hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue transition-all"
-                    onClick={() =>
-                      handleEdit(item._id, {
-                        
-                      })
-                    }
-                  >
-                    Edit
-                  </button> */}
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="border border-black bg-black rounded w-1/4 flex flex-col p-4">
-        <div className="text-2xl font-semibold mb-4">Checkout</div>
+      <div className="border border-black bg-black rounded w-full md:w-1/4 flex flex-col p-4">
+        <div className="text-2xl font-semibold mb-4 p-6">Checkout</div>
         <div className="text-lg mb-4">
           Total Price: ${totalPrice.toFixed(2)}
         </div>

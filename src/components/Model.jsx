@@ -24,9 +24,9 @@ const Model = () => {
   });
   const [isAdded, setIsAdded] = useState(false);
 
-  const { token, isLoggedIn } = useContext(AuthContext); // Get the token from the context
+  const { isLoggedIn } = useContext(AuthContext); // Get the token from the context
   const API_URL = import.meta.env.VITE_API_URL;
-
+  const token = localStorage.getItem("authToken");
   // camera control for the model view
   const cameraControlSmall = useRef();
   const cameraControlLarge = useRef();
@@ -101,7 +101,7 @@ const Model = () => {
       type: model.title,
       color: model.color[0],
       image: model.img,
-      size: size,
+      size: size === "small" ? "6.3" : "6.7",
       quantity: 1, // Assuming a default quantity of 1
       price: size === "small" ? 999 : 1199,
     };
