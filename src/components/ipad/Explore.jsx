@@ -130,7 +130,7 @@ const Explore = () => {
         {ipadLineup.map((item, index) => (
           <div
             key={index}
-            className="item w-full h-full flex flex-col items-center opacity-0 -translate-x-50"
+            className="item w-full h-full flex flex-col items-center justify-center opacity-0 -translate-x-50"
           >
             <img src={item.img} alt={item.name} />
             <h2 className="text-2xl font-bold mt-5 text-black">{item.title}</h2>
