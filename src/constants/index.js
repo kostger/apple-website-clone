@@ -17,6 +17,16 @@ import {
   ipadProImg,
   whiteImg,
   yellowImg,
+  iconChipA14Img,
+  iconChipA15Img,
+  iconChipM2Img,
+  iconChipM4Img,
+  ipadairCameraImg,
+  ipadminiCameraImg,
+  ipadproCameraImg,
+  magickeyboardM4Img,
+  magickeyboardImg,
+  applePencilImg,
 } from "../utils";
 
 export const navLists = ["Store", "iPad", "iPhone", "Support"];
@@ -139,7 +149,28 @@ export const ipadLineup = [
     price: 1199,
     displayType: "Ultra Retina XDR display",
     colorSpec: "P3 wide color",
-    extraDesc: "Nano-texture display glass option on 1TB and 2TB models",
+    specs: [
+      {
+        title: "Chip",
+        img: iconChipM4Img,
+        desc: "M4 chip",
+      },
+      {
+        title: "Camera",
+        img: ipadproCameraImg,
+        desc: "12MP Ultra Wide Camera 4K video, ProRes",
+      },
+      {
+        title: "Pencil",
+        img: applePencilImg,
+        desc: "Supports Apple Pencil Pro",
+      },
+      {
+        title: "Magic Keyboard",
+        img: magickeyboardM4Img,
+        desc: "Supports Magic Keyboard for iPad Pro (M4)",
+      },
+    ],
   },
   {
     title: "iPad Air",
@@ -150,8 +181,28 @@ export const ipadLineup = [
     price: 1099,
     displayType: "Liquid Retina display",
     colorSpec: "P3 wide color",
-    extraDesc:
-      "Measured diagonally as a rectangle, the 13-inch iPad Air is 12.9 inches, and the 11-inch iPad Air is 10.86 inches. Actual viewable area is less.",
+    specs: [
+      {
+        title: "Chip",
+        img: iconChipM2Img,
+        desc: "M2 chip",
+      },
+      {
+        title: "Camera",
+        img: ipadairCameraImg,
+        desc: "12MP Wide Camera 4K video",
+      },
+      {
+        title: "Pencil",
+        img: applePencilImg,
+        desc: "Supports Apple Pencil Pro",
+      },
+      {
+        title: "Magic Keyboard",
+        img: magickeyboardM4Img,
+        desc: "Supports Magic Keyboard",
+      },
+    ],
   },
   {
     title: "iPad",
@@ -162,6 +213,28 @@ export const ipadLineup = [
     price: 950,
     displayType: "Liquid Retina display",
     colorSpec: "sRGB color",
+    specs: [
+      {
+        title: "Chip",
+        img: iconChipA14Img,
+        desc: "A14 Bionic chip",
+      },
+      {
+        title: "Camera",
+        img: ipadairCameraImg,
+        desc: "12MP Wide Camera 4K video",
+      },
+      {
+        title: "Pencil",
+        img: applePencilImg,
+        desc: "Supports Apple Pencil",
+      },
+      {
+        title: "Magic Keyboard",
+        img: magickeyboardM4Img,
+        desc: "Supports Magic Keyboard Folio",
+      },
+    ],
   },
   {
     title: "iPad mini",
@@ -172,5 +245,27 @@ export const ipadLineup = [
     price: 799,
     displayType: "Liquid Retina display",
     colorSpec: "sRGB color",
+    specs: [
+      {
+        title: "Chip",
+        img: iconChipA15Img,
+        desc: "A15 Bionic chip",
+      },
+      {
+        title: "Camera",
+        img: ipadminiCameraImg,
+        desc: "12MP Wide Camera 4K video",
+      },
+      {
+        title: "Pencil",
+        img: applePencilImg,
+        desc: "Supports Apple Pencil (2nd generation)",
+      },
+      {
+        title: "Magic Keyboard",
+        img: magickeyboardImg,
+        desc: "Supports Bluetooth keyboards",
+      },
+    ],
   },
 ];

@@ -41,6 +41,30 @@ import ipad_air from "/assets/images/ipad/ipad-air.png";
 import ipad from "/assets/images/ipad/ipad.png";
 import ipad_mini from "/assets/images/ipad/ipad-mini.png";
 
+import icon_chip_a14 from "/assets/images/ipad/icon_chip_a14.png";
+import icon_chip_a15 from "/assets/images/ipad/icon_chip_a15.png";
+import icon_chip_m2 from "/assets/images/ipad/icon_chip_m2.png";
+import icon_chip_m4 from "/assets/images/ipad/icon_chip_m4.png";
+
+import ipadair_camera from "/assets/images/ipad/ipadair13_gen6_camera.png";
+import ipadmini_camera from "/assets/images/ipad/ipadmini_gen6_camera.png";
+import ipadpro_camera from "/assets/images/ipad/ipadpro13_gen7.png";
+import magickeyboard_m4 from "/assets/images/ipad/magickeyboard_m4.png";
+import magickeyboard from "/assets/images/ipad/magickeyboard.png";
+import applePencil from "/assets/images/ipad/applepencil.png";
+
+export const iconChipA14Img = icon_chip_a14;
+export const iconChipA15Img = icon_chip_a15;
+export const iconChipM2Img = icon_chip_m2;
+export const iconChipM4Img = icon_chip_m4;
+
+export const ipadairCameraImg = ipadair_camera;
+export const ipadminiCameraImg = ipadmini_camera;
+export const ipadproCameraImg = ipadpro_camera;
+export const magickeyboardM4Img = magickeyboard_m4;
+export const magickeyboardImg = magickeyboard;
+export const applePencilImg = applePencil;
+
 export const ipadProImg = ipad_pro;
 export const ipadAirImg = ipad_air;
 export const ipadImg = ipad;

@@ -149,16 +149,22 @@ const Explore = () => {
               </span>
             </button>
             <div className="mt-4 flex flex-col justify-center items-center gap-2 w-1/2">
-              <p className="text-lg font-semibold text-black">{item.size}</p>
+              <p className="text-3xl font-semibold text-black">{item.size}</p>
               <p className="text-gray-600 text-sm">{item.displayType}</p>
               <p className="text-gray-400 text-sm">{item.colorSpec}</p>
-
-              {/* Conditionally Render Extra Description */}
-              {item.extraDesc && (
-                <p className="text-gray-400 text-xs mt-2 italic">
-                  {item.extraDesc}
-                </p>
-              )}
+            </div>
+            <div className="mt-4 flex flex-col justify-center items-center gap-4 w-full">
+              {item.specs.map((spec, specIndex) => (
+                <div
+                  key={specIndex}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  <img src={spec.img} alt={spec.title} className="w-9 h-11" />
+                  <p className="text-center text-sm text-gray-500 mt-2 flex-wrap text-wrap w-4/5">
+                    {spec.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         ))}
