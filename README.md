@@ -3,7 +3,7 @@
 This is a MERN stack project designed to replicate the user interface and functionality of the Apple website, featuring a 3D model of an Apple product created using Three.js.
 
 🔗 **Live Demo**  
-[Visit the website](https://vercel.com/konstantinos-gerogiannis-projects/apple-website-clone)  
+[Visit the website](https://apple-website-clone-ebon.vercel.app/)  
 
 ⚠️ **Note:**  
 Google Chrome may occasionally warn about phishing when accessing the site. To avoid this, you can use Incognito Mode or try another browser.
