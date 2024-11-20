@@ -1,6 +1,6 @@
 # Apple Website Clone
 
-This is a MERN stack project designed to replicate the user interface and functionality of the Apple website, featuring a 3D model of an Apple product created using Three.js.
+This is a MERN stack project designed to replicate the user interface and functionality of the Apple website, featuring login functionality, a 3D model of an Apple product created using Three.js, User cart functionality and more.
 
 🔗 **Live Demo**  
 [Visit the website](https://apple-website-clone-ebon.vercel.app/)  
