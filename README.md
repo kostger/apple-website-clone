@@ -1,8 +1,30 @@
-# React + Vite
+# Apple Website Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a MERN stack project designed to replicate the user interface and functionality of the Apple website, featuring a 3D model of an Apple product created using Three.js.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**  
+[Visit the website](https://vercel.com/konstantinos-gerogiannis-projects/apple-website-clone)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚠️ **Note:**  
+Google Chrome may occasionally warn about phishing when accessing the site. To avoid this, you can use Incognito Mode or try another browser.
+
+## 🛠️ Features
+- **3D Product View**: Interactive Apple product model implemented with Three.js.  
+- **Cart Functionality**: Add products to the cart and proceed to checkout (mock).  
+- **Authentication**: User registration and login functionality.  
+- **Responsive Design**: Ensures an optimized experience on all devices.  
+
+## 🖥️ Technologies Used
+### Frontend
+- **React**: For building the user interface.  
+- **Three.js**: For rendering 3D Apple product models.  
+- **Tailwind CSS**: For styling and responsive design.  
+
+### Backend
+- **Express.js**: For building the server API.  
+- **MongoDB**: For the database.  
+- **Node.js**: For running the backend server.  
+
+✨ **GitHub Repositories**  
+- [Frontend](https://github.com/kostger/apple-website-clone)  
+- [Backend](https://github.com/kostger/apple-clone-server)
